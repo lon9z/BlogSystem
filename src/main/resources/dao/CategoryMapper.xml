@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lyzzz.blog.dao.CategoryMapper">
+  <resultMap id="BaseResultMap" type="com.lyzzz.blog.entity.Category">
+    <!--@mbg.generated-->
+    <!--@Table tb_category-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, `name`
+  </sql>
+    <select id="findCategoryByArticleId" resultMap="BaseResultMap" parameterType="long" >
+      SELECT
+      c.*
+      FROM
+      tb_article a,
+      tb_category c,
+      tb_article_category ac
+      WHERE
+      a.id = ac.article_id
+      AND
+      c.id = ac.category_id
+      AND
+      a.id = #{id,jdbcType=BIGINT}
+    </select>
+</mapper>

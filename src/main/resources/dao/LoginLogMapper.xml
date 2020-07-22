@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lyzzz.blog.dao.LoginLogMapper">
+  <resultMap id="BaseResultMap" type="com.lyzzz.blog.entity.LoginLog">
+    <!--@mbg.generated-->
+    <!--@Table tb_login_log-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="ip" jdbcType="VARCHAR" property="ip" />
+    <result column="location" jdbcType="VARCHAR" property="location" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="device" jdbcType="VARCHAR" property="device" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, username, ip, `location`, create_time, device
+  </sql>
+</mapper>

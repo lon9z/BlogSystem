@@ -1,0 +1,21 @@
+# 生产环境
+spring:
+  datasource:
+    name: prodDataSource
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://192.168.147.100:3306/blog?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true
+
+server:
+  port: 8080
+  tomcat:
+    uri-encoding: UTF-8
+
+swagger.enable: false
+
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    com.lyzzz.blog.dao: error

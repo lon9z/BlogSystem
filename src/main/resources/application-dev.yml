@@ -1,0 +1,21 @@
+# 开发环境
+spring:
+  datasource:
+    name: devDataSource
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/blog?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true
+
+server:
+  port: 8081
+  tomcat:
+    uri-encoding: UTF-8
+
+swagger.enable: true
+
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    com.lyzzz.blog.dao: DEBUG
